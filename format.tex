@@ -1,0 +1,22 @@
+\usepackage[ngerman]{babel}			% deutsche Namen/Umlaute
+\usepackage[utf8]{inputenc}			% Zeichensatzkodierung
+\usepackage{graphicx}				% Einbinden von Bildern
+\usepackage{color}					% Farben wenn es sein muß
+\usepackage{hyperref}				% Klickbare Verweise und \autoref{label}
+\newcommand*{\email}[1]{            % Klickbare eMail-Adressen
+    \normalsize\href{mailto:#1}{#1}\par
+    }
+\usepackage{booktabs}				% "Schöne" Tabellen
+\usepackage{amsmath}				% Mathematischer Formelsatz AMS
+\usepackage{amsfonts}
+\usepackage{csquotes}               % Empfohlener Import für babel/polyglossia
+\usepackage{blindtext}              % Einfügen von Blindtext möglich
+
+\usepackage[
+    printonlyused                   % nur verwendete Abkürzungen ins Verzeichnis
+]{acronym}                          % Abkürzungen
+\usepackage[section]{placeins}      % Bilder bleiben im Abschnitt
+% \usepackage{scrpage2}
+\usepackage{scrlayer-scrpage}       % Neuere Version von scrpage2
+\pagestyle{scrheadings}
+\clearscrheadings
