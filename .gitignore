@@ -5,3 +5,4 @@ handout.log
 handout.synctex.gz
 *_temp.tex
 handout.pdf
+*.out
