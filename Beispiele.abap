@@ -1,11 +1,11 @@
 " Erstellung von Klassen: Erfolgt zweigeteilt, zunächst eine Definition, dann eine Implementierung. (Source: ABAP Objects_ Introduction to Programming SAP Applications, PDF S. 124)
 " Das ist eine Beispiel Klasse Auto.
-CLASS Auto DEFINITION
+CLASS Auto DEFINITION.
     ...
 ENDCLASS.
 
 " Implementierung einer Beispiel Klasse. Bsp S. 127
-CLASS Auto IMPLEMENTATION
+CLASS Auto IMPLEMENTATION.
     ...
 ENDCLASS.
 
@@ -15,7 +15,7 @@ ENDCLASS.
 " Protected: Zugriff von Subklassen und eigenen Methoden einer Klasse.
 " Private: Zugriff ist nur für klasseneigene Methoden möglich.
 
-CLASS Auto DEFINITION
+CLASS Auto DEFINITION.
     PUBLIC SECTION.
         ...
     PROTECTED SECTION.
@@ -27,7 +27,13 @@ ENDCLASS.
 " Kapselung
 " -> Getter & Setter
 
-" Vererbung
+" Beginnt ab Seite 140.
+" Vererbung: Klasse football_player erbt von Klasse player.
+class kleinwagen DEFINITION INHERITING
+    FROM Auto.
+endclass.
+
+class kleinwagen IMPLEMENTATION.
 
 " Polymorphie
 
