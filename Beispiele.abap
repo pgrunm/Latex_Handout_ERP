@@ -9,7 +9,7 @@ CLASS Auto IMPLEMENTATION.
     ...
 ENDCLASS.
 
-LALALALALALA
+
 " Sichtbarkeiten: Public, Protected und Private
 " Public: Zugreifbar von allen Usern, Methoden, Subklassen und der Klasse selbst. -> Externe Zugriffsmöglichkeit der Klasse
 " Protected: Zugriff von Subklassen und eigenen Methoden einer Klasse.
