@@ -4,7 +4,7 @@
 % \renewcommand{\dateseparator}{.}
 
 \begin{document}
-\title{ERP-Systeme: Handout zur Präsentation objekoriente Entwicklung mit ABAP Objects}
+\title{ERP-Systeme: Handout zur Präsentation objektorientierte Entwicklung mit ABAP Objects}
 
 % Autoren
 \author{
@@ -21,12 +21,20 @@
 
 \newpage
 \tableofcontents
+
+\renewcommand\listoflistingscaption{Liste des enthaltenen Quellcodes}
+\listoflistings
+
 \newpage
 
 \section{Einführung in ABAP}
 \subsection{Historie von ABAP}
 Loren ipsum bla bla bla.
 
-\lstinputlisting[language=ABAP, firstline=18, lastline=25]{Beispiele.abap}
+\begin{listing}
+  \inputminted{abap}{code/vererbung.abap}
+  \caption{Vererbung in ABAP}
+  \label{listing:abap_vererbung}
+\end{listing}
 
 \end{document}
