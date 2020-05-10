@@ -1,6 +1,7 @@
 \documentclass[12pt,a4paper]{scrartcl}
 
-\input{format.tex}          % Grundlegende Einstellungen
+\input{format/format.tex}          % Grundlegende Einstellungen
+\input{format/abap_code.tex}
 % \renewcommand{\dateseparator}{.}
 
 \begin{document}
@@ -30,11 +31,12 @@
 \section{Einführung in ABAP}
 \subsection{Historie von ABAP}
 Loren ipsum bla bla bla.
-
-\begin{listing}
-  \inputminted{abap}{code/vererbung.abap}
+\begin{listing}[ht]{}
+  \abapcode{code/vererbung.abap}
   \caption{Vererbung in ABAP}
   \label{listing:abap_vererbung}
 \end{listing}
+\newline 
+Listing \ref{listing:abap_vererbung} zeigt die Vererbung in ABAP auf.
 
 \end{document}
