@@ -7,3 +7,6 @@ handout.synctex.gz
 handout.pdf
 *.out
 handout.toc
+__latexindent_temp*
+handout.lol
+_minted-handout/
