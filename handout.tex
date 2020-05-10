@@ -1,8 +1,8 @@
 \documentclass[12pt,a4paper]{scrartcl}
 
-\input{format/format.tex}          % Grundlegende Einstellungen
+% Grundlegende Einstellungen
+\input{format/format.tex}          
 \input{format/abap_code.tex}
-% \renewcommand{\dateseparator}{.}
 
 \begin{document}
 \title{ERP-Systeme: Handout zur Präsentation objektorientierte Entwicklung mit ABAP Objects}
@@ -28,8 +28,11 @@
 
 \newpage
 
-\section{Einführung in ABAP}
-\subsection{Historie von ABAP}
+\input{kapitel/einführung_abap.tex}
+\input{kapitel/grundlagen_objektorientierung.tex}
+\input{kapitel/obj_elemente_abap.tex}
+\input{kapitel/fazit.tex}
+
 Loren ipsum bla bla bla.
 \begin{listing}[ht]{}
   \abapcode{code/vererbung.abap}
