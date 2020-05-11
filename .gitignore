@@ -6,6 +6,7 @@
 *_temp.tex
 *.pdf
 *.out
+.vscode/
 handout.toc
 __latexindent_temp*
 handout.lol
