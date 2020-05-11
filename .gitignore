@@ -12,3 +12,6 @@ __latexindent_temp*
 handout.lol
 _minted-*/
 kapitel/augs/fazit.aux
+
+# Temporary file folder -> ignore that!
+augs/*
