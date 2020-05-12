@@ -47,10 +47,10 @@ ENDCLASS.
 
 CLASS class_type_approach IMPLEMENTATION. 
 Method start. 
-CALL Method class1_prgm→prgm_type. 
+CALL Method class1_prgm->prgm_type. 
 Write: 'follows'. 
 
-CALL Method class1_prgm→approach1. 
+CALL Method class1_prgm->approach1. 
 EndMethod. 
 ENDCLASS. 
 
@@ -60,11 +60,11 @@ class_2 Type Ref To class_OO.
 
 Create Object class_1. 
 Create Object class_2. 
-CALL Method class_type_approach⇒start 
+CALL Method class_type_approach->start 
 Exporting 
 
 class1_prgm = class_1. 
 New-Line. 
-CALL Method class_type_approach⇒start 
+CALL Method class_type_approach->start 
 Exporting 
 class1_prgm = class_2.  
