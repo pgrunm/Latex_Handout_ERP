@@ -1,5 +1,23 @@
 \section{Objektorientierte Elemente in ABAP}
 
+% Kapitel Klassen
+\subsection{Klassen in ABAP}
+\begin{itemize}
+  \item Zweigeteilte Erstellung einer Klasse.
+  \begin{itemize}
+    \item Definition enthält z. B. Variablen, Methoden und Sichtbarkeit.
+    \item Logik des eigentlichen Programms (Methoden usw.) in der Implementierung.
+  \end{itemize}
+\end{itemize}
+
+% Beispiel Quellcode Klassen
+\begin{listing}[ht]{}
+  \abapcode{code/klasse.abap}
+  \caption{Vererbung in ABAP}
+  \label{listing:abap_klasse}
+\end{listing}
+Listing \ref{listing:abap_klasse} stellt ein Beispiel zu Klassen in ABAP vor. Die Erstellung ist hier zweigeteilt. Zunächst erfolgt eine Definition z. b. mit Variablen und im Anschluss die Implementierung der Programmlogik\footcite[Vgl.][S. 233]{kellerABAPObjectsIntroduction2002}. 
+
 \subsection{Vererbung in ABAP}
 \begin{itemize}
   \item ABAP ermöglicht lediglich eine Superklasse.
@@ -7,9 +25,42 @@
   \item Vererbung wird durch das Schlüsselwort 
   \textit{INHERITING} eingeleitet (s. Listing \ref{listing:abap_vererbung}).
 \end{itemize}
+
+% Beispiel Quellcode Vererbung
 \begin{listing}[ht]{}
   \abapcode{code/vererbung.abap}
-  \caption{Vererbung in ABAP}
+  \caption{Vererbung demonstriert an einer Beispielklasse in ABAP}
   \label{listing:abap_vererbung}
 \end{listing}
 Listing \ref{listing:abap_vererbung} zeigt die Vererbung in ABAP auf. ABAP ermöglicht ermöglicht lediglich eine Superklasse, jedoch beliebig viele Subklassen\footcite[Vgl.][S. 266 ff.]{kellerABAPObjectsIntroduction2002}.
+
+% Kapitel Kapselung 
+\subsection{Kapselung in ABAP}
+\begin{itemize}
+  \item Verwendung sogenannter \textit{Getter} und \text{Setter} Methoden
+  \begin{itemize}
+    \item Erneut zweigeteilt: Definition und Implementierung.
+    \item \textbf{Achtung:} Getter sind nicht unbedingt erforderlich, Read-Only Attribute sind ebenfalls möglich!
+  \end{itemize}
+  \item Kennzeichnung einer Methode durch Stichwort \textit{Method}.
+\end{itemize}
+
+% Beispiel Quellcode Kapselung
+% -> Getter & Setter z. B. per Interface (Siehe: https://www.tutorialspoint.com/sap_abap/sap_abap_encapsulation.htm)
+%  Oder auch: https://zevolving.com/2011/02/read-only-attribute-vs-getter-methods/
+\begin{listing}[ht]{}
+  \abapcode{code/kapselung.abap}
+  \caption{Beispiele für Getter und Setter Methoden in ABAP}
+  \label{listing:abap_getter_setter}
+\end{listing}
+Dabei sind verschiedene Sichtbarkeiten möglich, darunter Public (öffentlich), Private und Protected\footcite[Vgl.][S. 83]{woodObjectorientedProgrammingABAP2016}.
+
+% Polymorphie in ABAP
+\subsection{Polymorphie in ABAP}
+
+% Könnte ein bisschen lang werden...
+\begin{listing}[ht]{}
+  \abapcode{code/polyphormie.abap}
+  \caption{Beispiel von Polymorphie in ABAP}
+  \label{listing:abap_polymorphie}
+\end{listing}
