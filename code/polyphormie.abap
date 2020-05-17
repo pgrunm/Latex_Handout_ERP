@@ -1,70 +1,67 @@
 " Polymorphie
-Report ZPolymorphism1. 
-CLASS class_prgm Definition Abstract. 
-PUBLIC Section. 
-Methods: prgm_type Abstract, 
-approach1 Abstract. 
-ENDCLASS. 
+" Definition eines Interface
+INTERFACE if_flight_plan.
+  METHODS set_city_from
+    IMPORTING
+      city TYPE s_from_cit
+    RAISING
+      cx_city_validation.
+  METHODS get_city_from
+    RETURNING VALUE(result) TYPE s_from_cit.
+ENDINTERFACE.
 
-CLASS class_procedural Definition 
-Inheriting From class_prgm. 
-PUBLIC Section. 
-Methods: prgm_type Redefinition, 
-approach1 Redefinition. 
-ENDCLASS. 
+CLASS flight_plan DEFINITION.
 
-CLASS class_procedural Implementation. 
-Method prgm_type. 
-Write: 'Procedural programming'. 
+  PUBLIC SECTION.
 
-EndMethod. Method approach1. 
-Write: 'top-down approach'. 
+    METHODS constructor
+      IMPORTING
+        airline_id TYPE s_carrid
+        connection_id TYPE s_conn_id.
 
-EndMethod. ENDCLASS. 
-CLASS class_OO Definition 
-Inheriting From class_prgm. 
-PUBLIC Section. 
-Methods: prgm_type Redefinition, 
-approach1 Redefinition. 
-ENDCLASS. 
+    INTERFACES if_flight_plan.
 
-CLASS class_OO Implementation. 
-Method prgm_type. 
-Write: 'Object oriented programming'. 
-EndMethod. 
+  PRIVATE SECTION.
+    DATA: airline_id TYPE s_carr_id,
+          connection_id TYPE s_conn_id,
+          time_zone_city_from TYPE s_tzone,
+          city_from TYPE s_from_cit.
+ENDCLASS.
 
-Method approach1. 
-Write: 'bottom-up approach'.
-EndMethod. 
-ENDCLASS. 
+CLASS flight_plan IMPLEMENTATION.
 
-CLASS class_type_approach Definition. 
-PUBLIC Section. 
-CLASS-METHODS: 
-start Importing class1_prgm 
-Type Ref To class_prgm. 
-ENDCLASS. 
+  METHOD constructor.
+    me->airline_id = airline_id.
+    me->connection_id = connection_id.
+  ENDMETHOD.
 
-CLASS class_type_approach IMPLEMENTATION. 
-Method start. 
-CALL Method class1_prgm->prgm_type. 
-Write: 'follows'. 
+  METHOD if_flight_plan~set_city_from.
+    IF city_has_airport( city_from ) = abap_false.
+      RAISE EXCEPTION TYPE cx_city_without_airport.
+    ENDIF.
+    me->time_zone_city_from = get_time_zone_city( city_from ).
+    me->city_from = city_from.
+  ENDMETHOD.
 
-CALL Method class1_prgm->approach1. 
-EndMethod. 
-ENDCLASS. 
+  METHOD if_flight_plan~get_city_from.
+    result = city_from.
+  ENDMETHOD.
 
-Start-Of-Selection. 
-Data: class_1 Type Ref To class_procedural, 
-class_2 Type Ref To class_OO. 
+ENDCLASS.
 
-Create Object class_1. 
-Create Object class_2. 
-CALL Method class_type_approach->start 
-Exporting 
+FUNCTION SET_CITY_FRANKFURT.
+* IMPORTING VALUE(flight_plan_instance) TYPE REF TO if_flight_plan
+  flight_plan_instance->set_city_from( 'Frankfurt' ).
+ENDFUNCTION.
 
-class1_prgm = class_1. 
-New-Line. 
-CALL Method class_type_approach->start 
-Exporting 
-class1_prgm = class_2.  
+" Gibt erneut Frankfurt aus:
+DATA: flight_plan_abstract_instance TYPE REF TO if_flight_plan.
+
+flight_plan_abstract_instance = NEW flight_plan( airline_id = 'BA' connection_id = '400' ).
+
+ba_flight_plan->set:city_from( 'London' ).
+CALL FUNCTION 'SET_CITY_FRANKFURT'
+  EXPORTING
+    flight_plan_instance = flight_plan_abstract_instance.
+
+WRITE flight_plan_abstract_instance->get_city_from( ).
