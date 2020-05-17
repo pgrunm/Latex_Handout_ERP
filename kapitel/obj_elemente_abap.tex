@@ -58,9 +58,14 @@ Dabei sind verschiedene Sichtbarkeiten möglich, darunter Public (öffentlich), 
 % Polymorphie in ABAP
 \subsection{Polymorphie in ABAP}
 
-% Könnte ein bisschen lang werden...Dann würde ich etwas kürzeres vorschlagen. Das bekommt man nicht auf einer Sete dargestellt, auch nicht wenn man in den Einstellungen Samepage= true eingibt.
-\begin{listing}[ht]{}
-  \abapcode{code/polyphormie.abap}
-  \caption{Beispiel von Polymorphie in ABAP}
-  \label{listing:abap_polymorphie}
-\end{listing}
+% Könnte ein bisschen lang werden...Dann würde ich etwas kürzeres vorschlagen. Das bekommt man nicht auf einer Seite dargestellt, auch nicht wenn man in den Einstellungen Samepage= true eingibt.
+
+% Lange Code Listings siehe hier: https://tex.stackexchange.com/questions/12428/code-spanning-over-two-pages-with-minted-inside-listing-with-caption/53540#53540
+% Allerding ein wenig abgewandelt :-)
+\newenvironment{code}{\captionsetup{type=listing}}{}
+\begin{code}
+\abapcode{code/polyphormie.abap}
+\caption{Beispiel von Polymorphie in ABAP\protect\footnotemark}
+\label{listing:abap_polymorphie}
+\end{code}
+\footnotetext{Vgl. \footcite{UnderstandingPolymorphismSAP}.}
