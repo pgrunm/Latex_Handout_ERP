@@ -1,2 +1,0 @@
-" Beispiel Programm
-" Test123.
