@@ -7,8 +7,7 @@ PARAMETERS add RADIOBUTTON GROUP gr1.
 PARAMETERS subtract RADIOBUTTON GROUP gr1.
 PARAMETERS multiply RADIOBUTTON GROUP gr1.
 PARAMETERS divide RADIOBUTTON GROUP gr1.
-*&
- add ist gleich X, weil wenn add ausgewählt wird, wird meiner Variable eine Instanz zugewiesen.
+*& add ist gleich X, weil wenn add ausgewählt wird, wird meiner Variable eine Instanz zugewiesen.
 *& Es wird geprüft welche Auswahl getroffen wurde-
 *& zahl1 sichert das Ergebnis.
 
