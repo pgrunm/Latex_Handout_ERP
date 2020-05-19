@@ -32,5 +32,46 @@
     \caption{Beispiel eines komplexeren Klassendiagramms, Quelle: \textcite{wikipediabenutzerUMLKlassendiagramm}}
     \label{fig:bsp_klassendiagramm}
 \end{figure}
-ABC.
+
+\subsection{Vererbung}
+\begin{itemize}
+    \item Ermöglicht Nutzung verschiedener Eigenschaften eines Objekts
+    \item Vererbung von
+    \begin{itemize}
+        \item Methoden
+        \item Variablen
+        \item Konstanten
+    \end{itemize}
+    \item Abhängig von Sichtbarkeit (z. B. Public / Private)
+\end{itemize}
+
+\subsection{Kapselung}
+\begin{itemize}
+    \item Zugriff nur über definierte Methoden (Getters / Setters)
+    \item Kontrollierte Ein- und Ausgabe von Werten (z. B. durch Exception)
+    \item Innerer Aufbau bleibt verborgen
+\end{itemize}
+
+% Hier Tabelle mit Zugriffsrechten
+\begin{table}[h!]
+    \begin{tabular}{ l l }
+        \hline
+        \textbf{Zugriffsrecht} & \textbf{Bedeutung} \\ \hline
+        Public & Zugriff von überall möglich \\ \hline
+        Private & Zugriff nur innerhalb der eigenen Klasse \\ \hline 
+        Protected & Zugriff im selben Paket und Subklassen \\ \hline
+        Package & Zugriff nur von Klassen im selben Paket (von ABAP \underline{nicht} unterstützt) \\ 
+        \hline
+    \end{tabular}
+    \caption{Tabelle mit Übersicht zu Sichtbarkeiten}
+    \label{table:1}
+\end{table}
+
+\subsection{Polymorphie}
+\begin{itemize}
+    \item Liskovsches Substitutionsprinzip
+    \item Generalisierter Code in Basisklassen und Verwendung in Subklassen
+    \item Abgeleitetes Objekt tritt an die Stelle eines Objekts aus Basisklasse (Up-Cast)
+    \item Bezeichner kann anhängig von seiner Verwendung Objekte von div. Datentypen annehmen
+\end{itemize}
 \newpage
