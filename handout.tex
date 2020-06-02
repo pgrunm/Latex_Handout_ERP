@@ -21,7 +21,13 @@
 \date{\today}
 \maketitle
 
+% Verhindert die Seitenzahl auf der Titelseite
+\thispagestyle{empty}
+
 \newpage
+
+% Setze die Seitennummerierung auf Römisch.
+\pagenumbering{roman}
 \tableofcontents
 
 \listoffigures
@@ -33,6 +39,10 @@
 \listoflistings
 
 \newpage
+
+% Seitenzahlen, beginnen bei Seite 3.
+\pagenumbering{arabic}
+\setcounter{page}{3}
 
 \input{kapitel/einleitung_abap.tex}
 \input{kapitel/grundlagen_objektorientierung.tex}
